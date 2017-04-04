@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Hello, again, {{ user.nickname }}</h1>
+  {% for count in range(4) %}
+  <div>
+    <p>{{ posts[count].author.nickname }} says: <b>{{ posts[count].body }}</b></p>
+  </div>
+  {% endfor %}
+{% endblock %}
