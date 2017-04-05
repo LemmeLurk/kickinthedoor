@@ -160,3 +160,56 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2017-04-04 14:45:23,563 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
 2017-04-04 15:29:06,202 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
 2017-04-04 15:30:42,640 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 17:12:29,671 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 17:13:26,483 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 18:39:33,614 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:18:29,746 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:19:13,889 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:24:03,588 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:24:15,108 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:27:45,679 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:29:05,175 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:50:18,821 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:50:29,589 ERROR: Exception on /index [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 68, in index
+    page, POSTS_PER_PAGE, False).items
+NameError: name 'POSTS_PER_PAGE' is not defined
+2017-04-04 19:50:34,491 ERROR: Exception on /index [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 68, in index
+    page, POSTS_PER_PAGE, False).items
+NameError: name 'POSTS_PER_PAGE' is not defined
+2017-04-04 19:51:04,108 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:51:05,320 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 19:52:30,107 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 20:07:29,207 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-04 20:17:44,777 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]

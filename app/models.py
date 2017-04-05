@@ -155,7 +155,6 @@ class User (db.Model):
                 followers.c.follower_id == self.id).order_by (
                     Post.timestamp.desc ()
                 )
-            )
 
 
 

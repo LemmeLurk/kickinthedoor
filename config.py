@@ -1,6 +1,12 @@
 import os
 
+
+
 basedir = os.path.abspath (os.path.dirname (__file__))
+
+
+# pagination
+POSTS_PER_PAGE = 3
 
 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join (basedir, 'app.db')
