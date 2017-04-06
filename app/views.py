@@ -7,6 +7,8 @@ from datetime import datetime
 
 from app import app, db, lm, oid    # lm == login_manager, oid == open_id
 
+from app import babel
+
 from .forms import LoginForm, EditForm, PostForm, SearchForm
 
 from .models import User, Post
@@ -121,7 +123,7 @@ def after_login (response):
 
     if response.email is None or response.email == '':
 
-        flash ('Invalid login, Please try again.')
+        flash (gettext('Invalid login, Please try again.'))
 
         return redirect (url_for ('login'))
 
@@ -139,6 +141,8 @@ def after_login (response):
 
             nickname = response.email.split('@')[0]
 
+        ''' Call make_valid_nickname() to remove all non-valid characters '''
+        nickname = User.make_valid_nickname (nickname)
 
         nickname = User.make_unique_nickname (nickname)
 
@@ -383,3 +387,11 @@ def search_results (query):
     return render_template ('search_results.html',
                            query=query,
                            results=results)
+
+
+
+
+@babel.localeselector
+def get_locale ():
+
+    return request.accept_languages.best_match (LANGUAGES.keys ())

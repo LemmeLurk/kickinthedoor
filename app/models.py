@@ -1,3 +1,5 @@
+import re
+
 from app import app
 
 from app import db 
@@ -210,6 +212,13 @@ class User (db.Model):
 
 
         return new_nickname
+
+
+
+    @staticmethod
+    def make_valid_nickname (nickname):
+
+        return re.sub ('[^a-zA-Z0-9_\.]', '', nickname)
 
 
 

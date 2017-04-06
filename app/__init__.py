@@ -10,6 +10,8 @@ from flask_openid import OpenID
 
 from flask_mail import Mail
 
+from flask_babel import Babel, lazy_gettext
+
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, \
         MAIL_PASSWORD
 
@@ -34,10 +36,15 @@ lm.init_app (app)
 # used to redirect user to login when try to access page that requires login
 lm.login_view = 'login' 
 
+lm.login_message = lazy_gettext ('Please log in to access this page.')
+
 
 oid = OpenID (app, os.path.join (basedir, 'tmp'))
 
 mail = Mail (app)
+
+
+babel = Babel (app)
 
 
 ''' Enable emailing Admin exceptions when debugging is disabled '''

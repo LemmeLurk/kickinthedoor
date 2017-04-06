@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 import os
 
 
@@ -13,6 +16,13 @@ WHOOSH_BASE = os.path.join (basedir, 'search.db')
 
 
 MAX_SEARCH_RESULTS = 50
+
+
+# available languages
+LANGUAGES = {
+    'en': 'English',
+    'es': 'Español'
+}
 
 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join (basedir, 'app.db')

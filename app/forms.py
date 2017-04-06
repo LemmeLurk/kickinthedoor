@@ -1,5 +1,7 @@
 from flask_wtf import Form
 
+from flask_babel import gettext
+
 from wtforms import StringField, BooleanField, TextAreaField
 
 from wtforms.validators import DataRequired, Length
@@ -44,12 +46,20 @@ class EditForm (Form):
 
             return False
 
+
         ''' As explained above, the value of original_nickname is set
-        when this object was created, so it contains the name before being
+        when this Form was created, so it contains the name before being
         modified '''
         if self.nickname.data == self.original_nickname:
             
             return True
+
+
+        if self.nickname.data != User.make_valid_nickname(self.nickname.data):
+
+            self.nickname.errors.append (gettext(
+                'This nickname has invalid characters. Please use letters, '
+                'numbers, dots and underscores only.'))
 
 
         ''' If another user has this nickname, user will != None '''
@@ -58,8 +68,8 @@ class EditForm (Form):
 
         if user != None:
 
-            self.nickname.errors.append (
-                'This nickname is already in use. Please choose another one.')
+            self.nickname.errors.append (gettext(
+                'This nickname is already in use. Please choose another one.'))
 
             return False
 

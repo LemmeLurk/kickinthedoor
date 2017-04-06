@@ -389,3 +389,5 @@ Traceback (most recent call last):
   File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 381, in search_results
     results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
 AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-06 16:45:25,518 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-06 16:45:27,718 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
