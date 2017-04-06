@@ -369,3 +369,23 @@ AttributeError: 'bool' object has no attribute '__call__'
 2017-04-06 12:48:57,612 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
 2017-04-06 12:57:19,195 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
 2017-04-06 12:58:22,922 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
+2017-04-06 13:30:30,246 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:64]
+2017-04-06 13:30:59,135 ERROR: Exception on /search_results/dog [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 381, in search_results
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
