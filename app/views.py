@@ -7,11 +7,14 @@ from datetime import datetime
 
 from app import app, db, lm, oid    # lm == login_manager, oid == open_id
 
-from .forms import LoginForm, EditForm, PostForm
+from .forms import LoginForm, EditForm, PostForm, SearchForm
 
 from .models import User, Post
 
-from config import POSTS_PER_PAGE
+from .emails import follower_notification
+
+from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS
+
 
 
 ''' in login view function we check g.user to determine if user is already 
@@ -34,6 +37,8 @@ def before_request ():
         db.session.add (g.user)
 
         db.session.commit ()
+
+        g.search_form = SearchForm ()
 
 
 @lm.user_loader
@@ -279,6 +284,10 @@ def follow (nickname):
 
     db.session.commit ()
 
+
+    follower_notification (user, g.user)    # send email
+
+
     flash ('You are now following ' + nickname + '!')
 
     return redirect (url_for ('user', nickname=nickname))
@@ -344,3 +353,33 @@ def internal_error (error):
     db.session.rollback ()
 
     return render_template ('500.html'), 500
+
+
+''' This function doesn't really do much -- just collects the search data
+and redirects to another page, passing this query as an argument
+The reason that the work isn't done here is in case a user hits the refresh
+page -- the form data would have to be resubmitted
+This is avoided when the response to a POST request is a redirect -- because
+after the redirect the browser's refresh will reload the redirected page '''
+@app.route ('/search', methods=['POST'])
+@login_required
+def search ():
+
+    if not g.search_form.validate_on_submit ():
+
+        return redirect (url_for ('index'))
+
+    return redirect (url_for ('search_results', \
+                              query=g.search_form.search.data))
+
+
+
+@app.route ('/search_results/<query>')
+@login_required
+def search_results (query):
+
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+
+    return render_template ('search_results.html',
+                           query=query,
+                           results=results)

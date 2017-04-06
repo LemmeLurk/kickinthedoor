@@ -1,6 +1,21 @@
+from app import app
+
 from app import db 
 
 from hashlib import md5
+
+import sys
+
+if sys.version_info >= (3, 0):
+
+    enable_search = False
+
+else:
+
+    enable_search = True
+
+
+    import flask_whooshalchemy as whooshalchemy
 
 
 
@@ -55,8 +70,7 @@ class User (db.Model):
             right side entity 
             For a given user, the query named `followed` returns all the right 
             side users that have the target user on the left side
-            The back-reference will be called `followers` and will return all 
-            the left side users that are linked to the target user in the 
+            The back-reference will be called `followers` and will return all the left side users that are linked to the target user in the 
             right side
             The additional lazy argument indicates the execution mode for this
             query
@@ -207,6 +221,9 @@ class User (db.Model):
 
 class Post (db.Model):
 
+    __searchable__ = ['body']
+
+
     id = db.Column (db.Integer, primary_key = True)
 
     body = db.Column (db.String (140))
@@ -221,3 +238,7 @@ class Post (db.Model):
         return '<Post %r>' % (self.body)
 
 
+
+if enable_search:
+
+    whooshalchemy.whoosh_index (app, Post)

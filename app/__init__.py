@@ -1,12 +1,14 @@
+import os
+
 from flask import Flask
 
 from flask_sqlalchemy import SQLAlchemy
 
-import os
-
 from flask_login import LoginManager
 
 from flask_openid import OpenID
+
+from flask_mail import Mail
 
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, \
         MAIL_PASSWORD
@@ -29,6 +31,8 @@ lm.login_view = 'login'
 
 
 oid = OpenID (app, os.path.join (basedir, 'tmp'))
+
+mail = Mail (app)
 
 
 ''' Enable emailing Admin exceptions when debugging is disabled '''
@@ -64,7 +68,7 @@ if not app.debug:
 
 
     mail_handler = SMTPHandler ((MAIL_SERVER, MAIL_PORT), \
-                                'no-reply@' + MAIL_SERVER,\
+                                'oh.vinxi@gmail.com',\
                                ADMINS, 'microblog failure',\
                                credentials)
 

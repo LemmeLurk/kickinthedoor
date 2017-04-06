@@ -213,3 +213,104 @@ NameError: name 'POSTS_PER_PAGE' is not defined
 2017-04-04 19:52:30,107 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
 2017-04-04 20:07:29,207 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
 2017-04-04 20:17:44,777 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 11:53:09,337 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 11:54:26,614 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 11:55:14,163 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 11:56:03,250 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:01:03,524 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:02:45,737 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:02:55,135 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:04:07,039 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:14:11,554 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:14:49,424 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:14:56,782 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:26:58,649 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:27:40,266 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-05 12:30:53,595 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:09:33,261 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:09:59,477 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:32:26,486 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:32:41,668 ERROR: Exception on /search_results/dog [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 375, in search_results
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-06 07:32:59,099 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:33:00,194 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:58:31,256 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:55]
+2017-04-06 07:59:39,361 ERROR: Exception on /search_results/dog [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 375, in search_results
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-06 08:03:27,748 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
+2017-04-06 08:26:56,394 ERROR: Exception on /search_results/dog [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 375, in search_results
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-06 08:29:59,159 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
+2017-04-06 08:30:06,666 ERROR: Exception on /search_results/dog [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 375, in search_results
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-06 08:58:07,990 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
+2017-04-06 09:06:59,266 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
+2017-04-06 09:20:43,938 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:59]
