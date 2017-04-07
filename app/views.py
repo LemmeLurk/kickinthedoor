@@ -45,6 +45,7 @@ def before_request ():
 
         g.search_form = SearchForm ()
     
+    ''' expose the language code of the user '''
     g.locale = get_locale ()
 
 
@@ -400,4 +401,4 @@ def search_results (query):
 @babel.localeselector
 def get_locale ():
 
-    return request.accept_languages.best_match (LANGUAGES.keys ())
+    return 'es' #return request.accept_languages.best_match (LANGUAGES.keys ())

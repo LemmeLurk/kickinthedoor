@@ -391,3 +391,152 @@ Traceback (most recent call last):
 AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
 2017-04-06 16:45:25,518 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
 2017-04-06 16:45:27,718 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:04:40,408 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:04:51,233 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:04:56,525 ERROR: Exception on /login [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_openid.py", line 500, in decorated
+    return f(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 123, in login
+    providers = app.config['OPENID_PROVIDERS'])
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/base.html", line 41, in template
+    {{ g.search_form.search (size=20, placeholder={{ _('Search') }}, class="search-query") }}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/login.html", line 3, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/base.html", line 41, in template
+    {{ g.search_form.search (size=20, placeholder={{ _('Search') }}, class="search-query") }}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 896, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 878, in subparse
+    rv = self.parse_statement()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 212, in parse_if
+    'name:endif'))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 870, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 615, in parse_tuple
+    args.append(parse())
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 427, in parse_expression
+    return self.parse_condexpr()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 445, in parse_or
+    left = self.parse_and()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 454, in parse_and
+    left = self.parse_not()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 465, in parse_not
+    return self.parse_compare()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 469, in parse_compare
+    expr = self.parse_math1()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 491, in parse_math1
+    left = self.parse_concat()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 502, in parse_concat
+    args = [self.parse_math2()]
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 512, in parse_math2
+    left = self.parse_pow()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 523, in parse_pow
+    left = self.parse_unary()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 542, in parse_unary
+    node = self.parse_postfix(node)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 671, in parse_postfix
+    node = self.parse_call(node)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 780, in parse_call
+    value = self.parse_expression()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 427, in parse_expression
+    return self.parse_condexpr()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 445, in parse_or
+    left = self.parse_and()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 454, in parse_and
+    left = self.parse_not()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 465, in parse_not
+    return self.parse_compare()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 469, in parse_compare
+    expr = self.parse_math1()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 491, in parse_math1
+    left = self.parse_concat()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 502, in parse_concat
+    args = [self.parse_math2()]
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 512, in parse_math2
+    left = self.parse_pow()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 523, in parse_pow
+    left = self.parse_unary()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 541, in parse_unary
+    node = self.parse_primary()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 576, in parse_primary
+    node = self.parse_dict()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 656, in parse_dict
+    key = self.parse_expression()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 427, in parse_expression
+    return self.parse_condexpr()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 445, in parse_or
+    left = self.parse_and()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 454, in parse_and
+    left = self.parse_not()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 465, in parse_not
+    return self.parse_compare()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 469, in parse_compare
+    expr = self.parse_math1()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 491, in parse_math1
+    left = self.parse_concat()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 502, in parse_concat
+    args = [self.parse_math2()]
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 512, in parse_math2
+    left = self.parse_pow()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 523, in parse_pow
+    left = self.parse_unary()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 541, in parse_unary
+    node = self.parse_primary()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 576, in parse_primary
+    node = self.parse_dict()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 657, in parse_dict
+    self.stream.expect('colon')
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/lexer.py", line 386, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token ':', got '}'
+2017-04-07 11:05:19,308 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:05:20,619 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:14:15,242 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:31:45,595 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:37:42,379 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:37:43,329 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:38:23,513 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-07 11:38:24,573 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]

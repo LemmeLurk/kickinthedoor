@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-07 10:23-0500\n"
+"POT-Creation-Date: 2017-04-07 11:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+
+#: app/__init__.py:39
+msgid "Please log in to access this page."
+msgstr ""
 
 #: app/forms.py:60
 msgid ""
@@ -27,47 +31,47 @@ msgstr ""
 msgid "This nickname is already in use. Please choose another one."
 msgstr ""
 
-#: app/views.py:76
+#: app/views.py:77
 msgid "Your post is now live!"
 msgstr ""
 
-#: app/views.py:131
+#: app/views.py:132
 msgid "Invalid login, Please try again."
 msgstr ""
 
-#: app/views.py:213
+#: app/views.py:214
 #, python-format
 msgid "User %(nickname)s not found."
 msgstr ""
 
-#: app/views.py:248
+#: app/views.py:249
 msgid "Your changes have been saved."
 msgstr ""
 
-#: app/views.py:278
+#: app/views.py:279
 msgid "You can't follow yourself!"
 msgstr ""
 
-#: app/views.py:287
+#: app/views.py:288
 #, python-format
 msgid "Cannot follow %(nickname)s."
 msgstr ""
 
-#: app/views.py:300
+#: app/views.py:301
 #, python-format
 msgid "You are now following %(nickname)s!"
 msgstr ""
 
-#: app/views.py:322
+#: app/views.py:323
 msgid "You can't unfollow yourself!"
 msgstr ""
 
-#: app/views.py:331
+#: app/views.py:332
 #, python-format
 msgid "Cannot unfollow %(nickname)s."
 msgstr ""
 
-#: app/views.py:340
+#: app/views.py:341
 #, python-format
 msgid "You have stopped following %(nickname)s."
 msgstr ""
@@ -86,6 +90,22 @@ msgstr ""
 
 #: app/templates/500.html:8
 msgid "The administrator has been notified. Sorry for the inconvenience~!"
+msgstr ""
+
+#: app/templates/base.html:31
+msgid "Home"
+msgstr ""
+
+#: app/templates/base.html:33
+msgid "Your Profile"
+msgstr ""
+
+#: app/templates/base.html:34
+msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:39
+msgid "search"
 msgstr ""
 
 #: app/templates/index.html:5

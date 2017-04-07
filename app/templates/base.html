@@ -38,7 +38,7 @@
           {% if g.user.is_authenticated %}
           <form class="navbar-search pull-right" action="{{ url_for ('search') }}" method="post" name={{ _('search') }}>
             {{ g.search_form.hidden_tag () }}
-            {{ g.search_form.search (size=20, placeholder={{ _('Search') }}, class="search-query") }}
+            {{ g.search_form.search (size=20, placeholder="{{ _('Search') }}", class="search-query") }}
           </form>
           {% endif %}
         </div>
