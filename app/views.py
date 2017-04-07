@@ -3,11 +3,12 @@ from flask import render_template, flash, \
 
 from flask_login import login_user, logout_user, current_user, login_required
 
+from flask_babel import gettext
+
 from datetime import datetime
 
-from app import app, db, lm, oid    # lm == login_manager, oid == open_id
-
-from app import babel
+# lm == login_manager, oid == open_id
+from app import app, db, lm, oid, babel
 
 from .forms import LoginForm, EditForm, PostForm, SearchForm
 
@@ -16,6 +17,8 @@ from .models import User, Post
 from .emails import follower_notification
 
 from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS
+
+from config import LANGUAGES
 
 
 
@@ -41,6 +44,8 @@ def before_request ():
         db.session.commit ()
 
         g.search_form = SearchForm ()
+    
+    g.locale = get_locale ()
 
 
 @lm.user_loader
@@ -68,7 +73,7 @@ def index(page=1):
 
         db.session.commit ()
 
-        flash ('Your post is now live!')
+        flash (gettext('Your post is now live!'))
 
         return redirect (url_for ('index'))
 
@@ -205,7 +210,7 @@ def user (nickname, page=1):
 
     if user == None:
 
-        flash ('User %s not found.' % nickname)
+        flash (gettext('User %(nickname)s not found.', nickname = nickname))
 
         return redirect (url_for ('index'))
 
@@ -240,7 +245,7 @@ def edit ():
         db.session.commit ()
 
 
-        flash ('Your changes have been saved.')
+        flash (gettext('Your changes have been saved.'))
 
 
         return redirect (url_for ('edit'))
@@ -270,7 +275,7 @@ def follow (nickname):
 
     if user == g.user:
 
-        flash ('You can\'t follow yourself!')
+        flash (gettext('You can\'t follow yourself!'))
 
         return redirect (url_for ('index'))
 
@@ -279,7 +284,7 @@ def follow (nickname):
 
     if u is None:
 
-        flash ('Cannot follow ' + nickname + '.')
+        flash (gettext('Cannot follow %(nickname)s.', nickname = nickname))
 
         return redirect (url_for ('user', nickname=nickname))
 
@@ -292,7 +297,7 @@ def follow (nickname):
     follower_notification (user, g.user)    # send email
 
 
-    flash ('You are now following ' + nickname + '!')
+    flash (gettext('You are now following %(nickname)s!', nickname = nickname))
 
     return redirect (url_for ('user', nickname=nickname))
 
@@ -314,7 +319,7 @@ def unfollow (nickname):
 
     if user == g.user:
 
-        flash ('You can\'t unfollow yourself!')
+        flash (gettext('You can\'t unfollow yourself!'))
 
         return redirect (url_for ('index'))
 
@@ -323,7 +328,7 @@ def unfollow (nickname):
 
     if u is None:
 
-        flash ('Cannot unfollow ' + nickname + '.')
+        flash (gettext('Cannot unfollow %(nickname)s.', nickname = nickname))
 
         return redirect (url_for ('user', nickname=nickname))
 
@@ -332,7 +337,8 @@ def unfollow (nickname):
 
     db.session.commit ()
 
-    flash ('You have stopped following ' + nickname + '.')
+    flash (gettext(
+        'You have stopped following %(nickname)s.', nickname = nickname))
 
     return redirect (url_for ('user', nickname=nickname))
 
