@@ -38,7 +38,7 @@
           {% if g.user.is_authenticated %}
           <form class="navbar-search pull-right" action="{{ url_for ('search') }}" method="post" name={{ _('search') }}>
             {{ g.search_form.hidden_tag () }}
-            {{ g.search_form.search (size=20, placeholder="{{ _('Search') }}", class="search-query") }}
+            {{ g.search_form.search (size=20, placeholder=_('Search'), class="search-query") }}
           </form>
           {% endif %}
         </div>
@@ -50,5 +50,34 @@
       </div>
     </div>
   </div> <!-- end container -->
+
+  <script>
+    function translate (sourceLange, destLang, sourceId, destId, loadingId) {
+
+      $(destId).hide();
+
+      $(loadingId).show();
+
+      // JQuery Ajax -- POST request to server 
+      $.post('/translate', {
+        text: $(sourceId).text(),
+        sourceLang: sourceLang,
+        destLang: destLang
+      }).done (function (translated) {
+        $(destId).text (translated['text']);
+
+        $(loadingId).hide ();
+
+        $(destId).show();
+      }).fail (function () {
+
+        $(destId).text ("{{ _('Error: Could not contact server.') }}");
+
+        $(loadingId).hide();
+
+        $(destId).show();
+      });
+    }
+  </script>
 </body>
 </html>

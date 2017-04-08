@@ -25,6 +25,12 @@ LANGUAGES = {
 }
 
 
+# microsoft translation service
+MS_TRANSLATOR_CLIENT_ID = 'smelting_post'
+
+MS_TRANSLATOR_CLIENT_SECRET = 'tDGfxT/piu4htfP3lRPIvlsavVTppSQ8oqq4Muk+eBo='
+
+
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join (basedir, 'app.db')
 
 SQLALCHEMY_MIGRATE_REPO = os.path.join (basedir, 'db_repository')

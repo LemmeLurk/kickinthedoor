@@ -7,74 +7,75 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-07 11:35-0500\n"
-"PO-Revision-Date: 2013-01-31 23:19-0800\n"
+"POT-Creation-Date: 2017-04-08 16:51-0500\n"
+"PO-Revision-Date: 2017-04-08 16:52-0500\n"
 "Last-Translator: Miguel Grinberg <miguel.grinberg@gmail.com>\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: app/__init__.py:39
 msgid "Please log in to access this page."
 msgstr "Por favor regístrate para acceder a esta página."
 
 #: app/forms.py:60
-msgid ""
-"This nickname has invalid characters. Please use letters, numbers, dots "
-"and underscores only."
-msgstr ""
-"Este nombre de usuario tiene caracteres inválidos. Por favor usa letras, "
-"números, puntos y underscores."
+msgid "This nickname has invalid characters. Please use letters, numbers, dots and underscores only."
+msgstr "Este nombre de usuario tiene caracteres inválidos. Por favor usa letras, números, puntos y underscores."
 
 #: app/forms.py:71
 msgid "This nickname is already in use. Please choose another one."
 msgstr "Este nombre de usuario ya esta usado. Por favor elije otro."
 
-#: app/views.py:77
+#: app/translate.py:43
+msgid "Error: translation service not configured."
+msgstr "Error: servicio de traducción no configurado."
+
+#: app/views.py:89
 msgid "Your post is now live!"
 msgstr "¡Tu artículo ha sido publicado!"
 
-#: app/views.py:132
+#: app/views.py:144
 msgid "Invalid login, Please try again."
-msgstr ""
+msgstr "Inicio de sesión no válido, por favor, inténtalo de nuevo."
 
-#: app/views.py:214
+#: app/views.py:226
 #, python-format
 msgid "User %(nickname)s not found."
 msgstr "El usuario %(nickname)s no existe."
 
-#: app/views.py:249
+#: app/views.py:261
 msgid "Your changes have been saved."
 msgstr "Tus cambios han sido guardados."
 
-#: app/views.py:279
+#: app/views.py:291
 msgid "You can't follow yourself!"
 msgstr "¡No te puedes seguir a tí mismo!"
 
-#: app/views.py:288
+#: app/views.py:300
 #, python-format
 msgid "Cannot follow %(nickname)s."
 msgstr "No se pudo seguir a %(nickname)s."
 
-#: app/views.py:301
+#: app/views.py:313
 #, python-format
 msgid "You are now following %(nickname)s!"
 msgstr "¡Ya estás siguiendo a %(nickname)s!"
 
-#: app/views.py:323
+#: app/views.py:335
 msgid "You can't unfollow yourself!"
 msgstr "¡No te puedes dejar de seguir a tí mismo!"
 
-#: app/views.py:332
+#: app/views.py:344
 #, python-format
 msgid "Cannot unfollow %(nickname)s."
 msgstr "No se pudo dejar de seguir a %(nickname)s."
 
-#: app/views.py:341
+#: app/views.py:353
 #, python-format
 msgid "You have stopped following %(nickname)s."
 msgstr "Ya no sigues más a %(nickname)s."
@@ -89,11 +90,11 @@ msgstr "Volver"
 
 #: app/templates/500.html:7
 msgid "An unexpected error has occured"
-msgstr ""
+msgstr "Ha ocurrido un error inesperado."
 
 #: app/templates/500.html:8
 msgid "The administrator has been notified. Sorry for the inconvenience~!"
-msgstr ""
+msgstr "Se ha notificado al administrador."
 
 #: app/templates/base.html:31
 msgid "Home"
@@ -109,12 +110,20 @@ msgstr "Desconectarse"
 
 #: app/templates/base.html:39
 msgid "search"
-msgstr ""
+msgstr "buscar"
+
+#: app/templates/base.html:41
+msgid "Search"
+msgstr "Buscar"
+
+#: app/templates/base.html:74
+msgid "Error: Could not contact server."
+msgstr "Error: No se pudo contactar con el servidor."
 
 #: app/templates/index.html:5
 #, python-format
 msgid "Hi, %(nickname)s"
-msgstr ""
+msgstr "¡Hola, %(nickname)s!"
 
 #: app/templates/index.html:11
 msgid "Say something:"
@@ -122,17 +131,17 @@ msgstr "Dí algo:"
 
 #: app/templates/index.html:21
 msgid "Post it, baby!"
-msgstr ""
+msgstr "¡Publícalo, cariño!"
 
 #: app/templates/index.html:32 app/templates/index.html:34
 #: app/templates/user.html:31 app/templates/user.html:33
 msgid "Newer Posts"
-msgstr ""
+msgstr "las publicaciones más nuevas"
 
 #: app/templates/index.html:37 app/templates/index.html:39
 #: app/templates/user.html:36 app/templates/user.html:38
 msgid "Older Posts"
-msgstr ""
+msgstr "Puestos antiguos"
 
 #: app/templates/login.html:26
 msgid "Please Sign In"
@@ -159,6 +168,10 @@ msgstr "Ingresar"
 msgid "%(nickname)s said %(when)s:"
 msgstr "%(nickname)s dijo %(when)s:"
 
+#: app/templates/post.html:22
+msgid "Translate"
+msgstr "traducir"
+
 #: app/templates/search_results.html:9
 #, python-format
 msgid "Search results for \"%(query)s\":"
@@ -166,7 +179,7 @@ msgstr "Resultados de búsqueda de \"%(query)s\":"
 
 #: app/templates/user.html:12
 msgid "Last seen on:"
-msgstr ""
+msgstr "Visto por última vez en:"
 
 #: app/templates/user.html:13
 msgid "Followers:"
@@ -186,7 +199,7 @@ msgstr "Seguir"
 
 #: app/templates/user.html:19
 msgid "Unfollow"
-msgstr "Dejar de seguir"
+msgstr "No seguir"
 
 #~ msgid "Invalid login. Please try again."
 #~ msgstr "Credenciales inválidas. Por favor intenta de nuevo."
@@ -236,3 +249,5 @@ msgstr "Dejar de seguir"
 #~ msgid "Last seen:"
 #~ msgstr "Último acceso:"
 
+#~ msgid "Error: Unexpected error."
+#~ msgstr "Error: Error inesperado."
