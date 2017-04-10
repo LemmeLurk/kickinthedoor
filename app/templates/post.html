@@ -9,13 +9,15 @@
       {% autoescape false %}
       <p>{{ _('%(nickname)s said %(when)s:', 
       nickname = '<a href="%s">%s</a>' % (url_for ('user', nickname=post.author.nickname), post.author.nickname),
-      when = momentjs (post.timestamp).fromNow ()) }}
+      when = momentjs (post.timestamp).fromNow ()) }}</p>
       {% endautoescape %}
-      </a>said on: {{ momentjs (post.timestamp).fromNow () }}:</p>
       <p><strong><span id="post{{ post.id }}">{{ post.body }}</span></strong></p>
     </td>
   </tr>
 </table>
+{% if post.author.id == g.user.id %}
+<div><a href="{{ url_for ('delete', id=post.id) }}">{{ _('Delete') }}</a></div>
+{% endif %}
 {% if post.language != None and post.language != '' and post.language != g.locale %}
   <div><span id="translation{{ post.id }}">
       <a href="javascript:translate('{{ post.language }}', '{{ g.locale }}', '#post{{ post.id }}',

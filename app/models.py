@@ -8,17 +8,6 @@ from hashlib import md5
 
 import sys
 
-if sys.version_info >= (3, 0):
-
-    enable_search = False
-
-else:
-
-    enable_search = True
-
-
-    import flask_whooshalchemy as whooshalchemy
-
 
 
 ''' Since this is an auxiliary table that has no data 
@@ -222,7 +211,7 @@ class User (db.Model):
 
 
 
-    def __repr__ (self):
+    def __repr__ (self):    # pragma: no cover
 
         return '<User %r>' % (self.nickname)
 
@@ -244,12 +233,13 @@ class Post (db.Model):
     language = db.Column (db.String(5))
 
 
-    def __repr__ (self):
+    def __repr__ (self):        # pragma: no cover
 
         return '<Post %r>' % (self.body)
 
 
 
-if enable_search:
+import flask_whooshalchemy as whooshalchemy
 
-    whooshalchemy.whoosh_index (app, Post)
+
+whooshalchemy.whoosh_index (app, Post)

@@ -574,3 +574,339 @@ jinja2.exceptions.TemplateSyntaxError: expected token ':', got '}'
 2017-04-08 15:29:26,096 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
 2017-04-08 15:33:12,395 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
 2017-04-08 16:43:56,689 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-08 17:03:55,076 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-08 17:04:17,602 ERROR: Exception on / [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 101, in index
+    posts = posts
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/base.html", line 49, in top-level template code
+    {% block content %}{% endblock %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 28, in block "content"
+    {% include 'post.html' %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 896, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 878, in subparse
+    rv = self.parse_statement()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 212, in parse_if
+    'name:endif'))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2017-04-08 17:04:29,350 ERROR: Exception on /index [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 101, in index
+    posts = posts
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/base.html", line 49, in top-level template code
+    {% block content %}{% endblock %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 28, in block "content"
+    {% include 'post.html' %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 896, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 878, in subparse
+    rv = self.parse_statement()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 212, in parse_if
+    'name:endif'))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2017-04-08 17:04:38,537 ERROR: Exception on /index [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 101, in index
+    posts = posts
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/base.html", line 49, in top-level template code
+    {% block content %}{% endblock %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 28, in block "content"
+    {% include 'post.html' %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 896, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 878, in subparse
+    rv = self.parse_statement()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 212, in parse_if
+    'name:endif'))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2017-04-08 17:04:46,281 ERROR: Exception on / [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 101, in index
+    posts = posts
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/base.html", line 49, in top-level template code
+    {% block content %}{% endblock %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/index.html", line 28, in block "content"
+    {% include 'post.html' %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/templates/post.html", line 26, in template
+    {% endif %}
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 896, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 878, in subparse
+    rv = self.parse_statement()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 212, in parse_if
+    'name:endif'))
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2017-04-08 17:05:32,235 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-08 17:05:33,552 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-08 17:06:20,213 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:23:22,510 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:23:24,199 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:24:39,601 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:24:40,513 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:26:24,794 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:26:25,721 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:29:09,366 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:29:10,261 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:35:54,378 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 11:35:55,327 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 12:51:13,802 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 12:51:14,895 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:09:23,768 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:09:24,732 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:14:26,625 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:16:29,745 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:16:37,529 ERROR: Exception on /search_results/dog [GET] [in /mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/flask/lib/python3.6/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/mnt/inspiron_STORAGE/_Development/Python/microblog/app/views.py", line 406, in search_results
+    results = Post.query.whoosh_search (query, MAX_SEARCH_RESULTS).all ()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-09 13:17:28,227 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:17:29,261 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:52:57,872 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:52:59,110 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:54:41,929 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:55:17,683 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:55:47,474 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 13:55:48,628 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 14:01:41,201 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 14:01:42,405 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 15:22:26,947 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 15:22:28,076 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 15:31:55,222 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 15:37:25,707 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 16:00:29,667 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 16:04:38,210 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 16:21:35,037 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 16:30:49,839 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 16:40:05,267 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 16:52:33,042 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:12:28,217 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:21:05,095 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:27:49,635 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:46:19,248 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:48:40,047 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:55:41,845 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 17:58:24,292 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:03:01,496 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:05:11,333 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:33:39,760 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:40:20,294 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:47:19,068 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:47:20,041 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:53:30,693 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:53:32,994 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:53:46,733 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]
+2017-04-09 18:53:47,863 INFO: microblog startup [in /mnt/inspiron_STORAGE/_Development/Python/microblog/app/__init__.py:71]

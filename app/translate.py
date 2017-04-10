@@ -60,6 +60,9 @@ def microsoft_translate (text, sourceLang, destLang):
         response = json.loads (conn.getresponse ().read ())
 
 
+        conn.close()
+
+
         token = response[u'access_token']
 
 
@@ -74,9 +77,13 @@ def microsoft_translate (text, sourceLang, destLang):
 
 
         conn.request("GET", '/V2/Ajax.svc/Translate?' + urlencode (params))
-        
-        
+
+
         response = conn.getresponse().read().decode('utf-8-sig') 
+
+
+        conn.close ()
+
 
         response = '{"response":' + response + '}'
 

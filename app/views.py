@@ -7,6 +7,8 @@ from flask_login import login_user, logout_user, current_user, login_required
 
 from flask_babel import gettext
 
+from flask_sqlalchemy import get_debug_queries
+
 from datetime import datetime
 
 # lm == login_manager, oid == open_id
@@ -23,6 +25,8 @@ from .translate import microsoft_translate
 from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS
 
 from config import LANGUAGES
+
+from config import DATABASE_QUERY_TIMEOUT
 
 from guess_language import guessLanguage
 
@@ -86,7 +90,9 @@ def index(page=1):
 
         db.session.commit ()
 
+
         flash (gettext('Your post is now live!'))
+
 
         return redirect (url_for ('index'))
 
@@ -421,7 +427,57 @@ def translate ():
 
 
 
+
+@app.route ('/delete/<int:id>')
+@login_required
+def delete (id):
+
+    post = Post.query.get (id)
+
+
+    if post is None:
+
+        flash ( gettext('Post not found.'))
+
+        return redirect (url_for ('index'))
+
+
+    if post.author.id != g.user.id:
+
+        flash ( gettext('You cannot delete this post.'))
+
+        return redirect (url_for ('index'))
+
+
+    db.session.delete (post)
+
+    db.session.commit ()
+
+
+    flash (gettext ('Your post has been deleted.'))
+
+
+    return redirect (url_for ('index'))
+
+
+
+@app.after_request
+def after_request (response):
+
+    for query in get_debug_queries ():
+
+        if query.duration >= DATABASE_QUERY_TIMEOUT:
+
+            app.logger.warning (
+                "SLOW QUERY: %s\nParameters: %s\nDuration: %fs\nContext: %s\n"\
+                % (query.statement, query.parameters, query.duration, 
+                   query.context))
+
+    return response
+
+
+
 @babel.localeselector
 def get_locale ():
 
-    return 'es' #return request.accept_languages.best_match (LANGUAGES.keys ())
+    return request.accept_languages.best_match (LANGUAGES.keys ())
