@@ -59,7 +59,7 @@ OPENID_PROVIDERS = [
 
 # mail server settings
 
-'''MAIL_SERVER = 'localhost'
+MAIL_SERVER = 'localhost'
 
 MAIL_PORT = 25
 
@@ -69,23 +69,7 @@ MAIL_PASSWORD = None
 
 
 # administrator list
-ADMINS = ['you@example.com']'''
-
-
-MAIL_SERVER = 'smtp.gmail.com'
-
-MAIL_PORT = 465
-
-MAIL_USE_TLS = False
-
-MAIL_USE_SSL = True
-
-MAIL_USERNAME = os.environ.get ('MAIL_USERNAME')
-
-MAIL_PASSWORD = os.environ.get ('MAIL_PASSWORD')
-
-
-ADMINS = ['oh.vinxi@gmail.com']
+ADMINS = ['you@example.com']
 
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
